@@ -49,7 +49,7 @@ nav:
     url:            "/tags"
   - name:           "Github"
     url:            "https://github.com/zacker330"
-  - name:           "老博客"  
+  - name:           "老博客"
     url:            "https://my.oschina.net/zjzhai"
 
 
@@ -78,5 +78,10 @@ defaults:
 gems:
   - jekyll-seo-tag
   - jekyll-paginate
+  - jekyll-feed
 
 exclude:            [vendor]
+
+
+plugins:
+  - jekyll-feed
