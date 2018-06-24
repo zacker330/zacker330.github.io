@@ -93,7 +93,7 @@ myid: 1
 某个 shell 需要一个临时变量，可以使用 environment 实现
 ```yaml
   - name: install | Build commons daemon.
-    shell: "./configure && make chdir=/opt/pinpoint/bin/commons-daemon/unix"
+    shell: "./configure && make chdir=/opt/pinpoint/"
     environment:
       - JAVA_HOME: "{{ JAVA_HOME }}"
 ```
