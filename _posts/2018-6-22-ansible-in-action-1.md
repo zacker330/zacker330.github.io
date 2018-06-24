@@ -101,7 +101,7 @@ myid: 1
 
 以下方式会生成：`a,a,a,a,` 注意最后的逗号我们是不需要的：  
 
-```yaml
+```
 {% for f in files %}
 a,
 {% endfor %}
@@ -109,7 +109,7 @@ a,
 
 这时，我们可以这样：
 
-```yaml
+```
 {% for f in files %}
 a{%- if not loop.last -%},{% endif %}
 {% endfor %}
