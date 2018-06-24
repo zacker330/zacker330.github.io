@@ -23,9 +23,11 @@ share: true
     dest: "/etc/sudoers.d/abc"
     validate: visudo -cf %s
 ```
+
 校验 Nginx 配置文件的文件：
+
 ```yaml
-- name: Copy the nginx configuration file
+- name: Copy the nginx file
   template:
     src: nginx.conf.j2
     dest: /etc/nginx/nginx.conf
@@ -35,26 +37,29 @@ share: true
 ```
 
 校验 Prometheus 配置文件：
+
 ```yaml
 - name: Copy Prometheus config
   template:
     src: prometheus.yml.j2
-    dest: "{{ prometheus_config_dir }}/prometheus.yml"
+    dest: "/etc/prometheus.yml"
     validate: "promtool check config %s"
   notify:
     reload prometheus config
 ```
 
 校验 Logstash 配置文件：
+
 ```yaml
 - name: template configs
   template:
     src: "logstash-filter.conf"
     dest: "/opt/logstash/conf"
-    validate: "/opt/logstash/bin/logstash -t -f %s"
+    validate: "logstash -t -f %s"
   environment:
         JAVA_HOME: "{{JAVA_HOME}}" ## logstash 命令需要 JAVA_HOME 环境变量
 ```
+
 ### 技巧2：使用 host 变量解决分布式系统中的 id 问题
 在部署 Zookeeper 时，通常会部署 3 台组成集群，同时每台 Zookeeper 都需要在配置一个 myid 的文本文件，而这个文件中只放id。而 id 是要求每台机器都是不同的。这时 host 变量派上用场了。定义 host 变量有两种方式：
 
@@ -76,10 +81,12 @@ share: true
 │   ├── 192.168.1.13
 ├── hosts
 ```
+
 ```bash
 #cat 192.168.1.11
 myid: 1
 ```
+
 **不推荐两种方式都使用，因为变量的作用域问题会把你搞晕**
 
 ### 技巧3：在执行 shell 时需要某个环境变量
@@ -90,24 +97,29 @@ myid: 1
     environment:
       - JAVA_HOME: "{{ JAVA_HOME }}"
 ```
-###技巧4：Jinjia2 语法：去除最后的逗号
+### 技巧4：Jinjia2 语法：去除最后的逗号
+
 以下方式会生成：`a,a,a,a,` 注意最后的逗号我们是不需要的：  
+
 ```yaml
 {% for f in files %}
 a,
 {% endfor %}
 ```
+
 这时，我们可以这样：
+
 ```yaml
 {% for f in files %}
 a{%- if not loop.last -%},{% endif %}
 {% endfor %}
 ```
 
-###技巧5： 利用 host 变量解决机器连接方式的不统一的问题
+### 技巧5： 利用 host 变量解决机器连接方式的不统一的问题
 机器标准化要求每台机器的ssh连接方式及管理员用户名及密码都是一样的。但是事实中，面对老机器，常常做不过。所以，我们的 Ansible 脚本必须能做到不同的机器可以使用不同的连接方式、管理员用户名和密码。利用 host 变量就可以实现了。
 
 举个例子，当前的文件内容如下：
+
 ```
 ├── group_vars
 ├── host_vars
@@ -116,12 +128,14 @@ a{%- if not loop.last -%},{% endif %}
 │   ├── 192.168.1.13
 ├── hosts
 ```
+
 ```yaml
 #cat  192.168.1.11
 ansible_ssh_user: abc
 ansible_become_method: sudo
 ansible_ssh_private_key_file: /users/abc/id_rsa
 ```
+
 ```yaml
 #cat  192.168.1.12
 ansible_ssh_user: bcd
