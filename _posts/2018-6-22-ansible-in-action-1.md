@@ -102,17 +102,21 @@ myid: 1
 以下方式会生成：`a,a,a,a,` 注意最后的逗号我们是不需要的：  
 
 ```
+{%raw%}
 {% for f in files %}
 a,
 {% endfor %}
+{% endraw %}
 ```
 
 这时，我们可以这样：
 
 ```
+{%raw%}
 {% for f in files %}
 a{%- if not loop.last -%},{% endif %}
 {% endfor %}
+{% endraw %}
 ```
 
 ### 技巧5： 利用 host 变量解决机器连接方式的不统一的问题
