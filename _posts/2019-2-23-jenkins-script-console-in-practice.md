@@ -10,7 +10,7 @@ share: true
 
 ### 通过脚本命令行批量修改Jenkins任务
 
-最近，笔者所在团队的 Jenkins 所在的服务器经常报硬盘空间不足。经查发现很多任务设置“丢弃旧的构建”。通知所有的团队检查自己的 Jenkins 任务有没有设置丢弃旧的构建，有些不现实。
+最近，笔者所在团队的 Jenkins 所在的服务器经常报硬盘空间不足。经查发现很多任务没有设置“丢弃旧的构建”。通知所有的团队检查自己的 Jenkins 任务有没有设置丢弃旧的构建，有些不现实。
 
 一开始想到的是使用 Jenkins 的 API 来实现批量修改所有的 Jenkins 任务。笔者对这个解决方案不满意，经 Google 发现有同学和我遇到了同样的问题。他使用的更“技巧”的方式：在 Jenkins 脚本命令行中，通过执行 Groovy 代码操作 Jenkins 任务。
 
@@ -53,7 +53,7 @@ share: true
 除了上文中的，使用界面来执行 Groovy 脚本，还可以通过 Jenkins HTTP API：`/script`执行。具体操作，请参考官方文档：https://wiki.jenkins.io/display/JENKINS/Jenkins+Script+Console。
 
 ### 问题：代码执行完成后，对任务的修改有没有被持久化？
-当我们代码`job.addProperty(new BuildDiscarderProperty(new LogRotator (2, 10, 2, 10)))`执行后，这个修改到底有没有持久化到文件系统中呢（Jenkins 的所有配置都持久在文件系统中）？我们看下 hudson.model.Job 的源码就知道：
+当我们代码`job.addProperty(new BuildDiscarderProperty(new LogRotator (2, 10, 2, 10)))`执行后，这个修改到底有没有持久化到文件系统中呢（Jenkins 的所有配置默认都持久在文件系统中）？我们看下 hudson.model.Job 的源码，在`addProperty`方法背后是有进行持久化的：
 
 ```groovy
 public void addProperty(JobProperty<? super JobT> jobProp) throws IOException {
