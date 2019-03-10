@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Electron 应用流水线设计"
+title: "Electron 应用的流水线设计"
 description: ""
 date: 2019-03-10
 tags: [Jenkins,Electron,Pipeline]
