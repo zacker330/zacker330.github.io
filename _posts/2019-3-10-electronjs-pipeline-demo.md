@@ -11,11 +11,11 @@ share: true
 
 Electron 是由 Github 开发，用 HTML，CSS 和 JavaScript 来构建跨平台桌面应用程序的一个开源库。
 
-本文将介绍 Electron 桌面应用的流水线的设计。写代码容易，但是如何跟读者说明白倒是个大问题。笔者现尝试直接贴代码，在代码注释中讲解。这是一次尝试，希望你正负的反馈。
+本文将介绍 Electron 桌面应用的流水线的设计。
+
+但是如何介绍呢？倒是个大问题。笔者尝试直接贴代码，在代码注释中讲解。这是一次尝试，希望你正负的反馈。
 
 ### 完整代码
-
-以下是可运行的完整代码：
 
 ```groovy
 pipeline {
@@ -109,9 +109,7 @@ def uploadArtifact(def appName, def appVersion, def artifactPath){
 
 多平台的构建应该是并行的，以提升流水线的效率。我们通过 `parallel` 指令实现。
 
-另外，默认 Electron 应用使用的三段式版本号设计，即 Major.Minor.Patch。但是笔者认为三段式的版本号信息还不够追踪应用与构建之间的关系。笔者希望版本号能反应出构建号和源代码的 commit id。所以，写了一个函数用于生成版本号：
-
-最终版本号，看起来类似这样：`1.0.0-f7b06d0.28`。
+另外，默认 Electron 应用使用的三段式版本号设计，即 Major.Minor.Patch。但是笔者认为三段式的版本号信息还不够追踪应用与构建之间的关系。笔者希望版本号能反应出构建号和源代码的 commit id。函数 `generateVersion` 用于生成此类版本号。生成的版本号，看起来类似这样：`1.0.0-f7b06d0.28`。
 
 
 ### 小结
@@ -121,7 +119,6 @@ def uploadArtifact(def appName, def appVersion, def artifactPath){
 * 持续交付的八大原则：https://blog.csdn.net/tony1130/article/details/6673741
 * Jenkins nodejs 插件：https://plugins.jenkins.io/nodejs 
 * Electron 版本管理：https://electronjs.org/docs/tutorial/electron-versioning#semver
-
 
 
 
