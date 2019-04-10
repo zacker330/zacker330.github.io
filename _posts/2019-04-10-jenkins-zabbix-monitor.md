@@ -174,4 +174,4 @@ jenkins.metrics.py 脚本之所以对 JSON 数据进行扁平化，是因为 Zab
 * Zabbix 监控项类型：[https://www.zabbix.com/documentation/3.4/zh/manual/config/items/itemtypes](https://www.zabbix.com/documentation/3.4/zh/manual/config/items/itemtypes)
 * metrics.json： [https://github.com/zacker330/jenkins-zabbix/blob/master/metrics.json](https://github.com/zacker330/jenkins-zabbix/blob/master/metrics.json)
 * jenkins-zabbix 实验环境：[https://github.com/zacker330/jenkins-zabbix](https://github.com/zacker330/jenkins-zabbix)
-* Prometheus：https://prometheus.io/
+* Prometheus：[https://prometheus.io/](https://prometheus.io/)
