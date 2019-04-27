@@ -11,10 +11,10 @@ share: true
 通常，我们有两种方法安装  Jenkins 插件。第一种方法是到 Jenkins 插件管理页面搜索插件，然后安装。第二种方法是上传 Jenkins 插件的 hpi 文件安装。这两种方法能满足大多数人的需求。
 
 第一种方法，如下图所示：
-![搜索安装](https://upload-images.jianshu.io/upload_images/292372-12412dbb4c58b810.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![搜索安装]({{ site.baseurl }}/assets/images/292372-12412dbb4c58b810.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 第二种方法，如下图所示：
-![上传插件](https://upload-images.jianshu.io/upload_images/292372-957598396b256971.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![上传插件]({{ site.baseurl }}/assets/images/292372-957598396b256971.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 但是对于需要保证 Jenkins 稳定或在 Jenkins 上进行二次开发的同学来说，以上方法是无法满足需求的。
 
@@ -55,7 +55,7 @@ Jenkins 插件有两个名称。一个叫 display name，一个叫 short name。
 
 如何知道一个插件的 short name 呢？可以在 Jenkins 插件官网上找到，比如 Ansible 的：
 
-![image.png](https://upload-images.jianshu.io/upload_images/292372-99968452eecc9be9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png]({{ site.baseurl }}/assets/images/292372-99968452eecc9be9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 在 `plugins.txt` 中使用的是 short name。
 
