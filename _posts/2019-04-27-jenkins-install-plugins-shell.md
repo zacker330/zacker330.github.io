@@ -11,10 +11,10 @@ share: true
 通常，我们有两种方法安装  Jenkins 插件。第一种方法是到 Jenkins 插件管理页面搜索插件，然后安装。第二种方法是上传 Jenkins 插件的 hpi 文件安装。这两种方法能满足大多数人的需求。
 
 第一种方法，如下图所示：
-![搜索安装]({{ site.baseurl }}/assets/images/292372-12412dbb4c58b810.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![搜索安装]({{ site.baseurl }}/assets/images/292372-12412dbb4c58b810.png)
 
 第二种方法，如下图所示：
-![上传插件]({{ site.baseurl }}/assets/images/292372-957598396b256971.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![上传插件]({{ site.baseurl }}/assets/images/292372-957598396b256971.png)
 
 但是对于需要保证 Jenkins 稳定或在 Jenkins 上进行二次开发的同学来说，以上方法是无法满足需求的。
 
@@ -22,7 +22,7 @@ share: true
 
 ### 自动安装插件的方法
 
-那么，我们如何才能做到 Jenkins 的插件是确定的呢？最好的方式应该是它能像构建工具一样，只要在一个地方定义所有想要插件的版本，然后 Jenkins 就自动安装好了。
+那么，有什么方法能做到即指定插件的版本，又能自动下载它的依赖呢？
 
 幸运的是，这整个逻辑，我们不需要重新实现一遍，Jenkins 的 Docker 镜像的代码仓库里已经有实现。只不过需要我们拿过来小小修改才能使用。笔者创建了相应的代码仓库：jenkins-install-plugins-shell 。链接在文章末尾。
 
@@ -55,7 +55,7 @@ Jenkins 插件有两个名称。一个叫 display name，一个叫 short name。
 
 如何知道一个插件的 short name 呢？可以在 Jenkins 插件官网上找到，比如 Ansible 的：
 
-![image.png]({{ site.baseurl }}/assets/images/292372-99968452eecc9be9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png]({{ site.baseurl }}/assets/images/292372-99968452eecc9be9.png)
 
 在 `plugins.txt` 中使用的是 short name。
 
