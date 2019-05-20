@@ -156,20 +156,20 @@ stage("build and upload"){
 
 本文重点不在配置管理，后面会有文章重点介绍。
 
-###5. 实验环境详细介绍
+### 5. 实验环境详细介绍
 事实上，整个实验，工作量大的地方有两处：一是 Springboot 流水线本身的设计；二是整个实验环境的自动化。读者朋友之所以能一两条简单的命令就能启动整个实验环境，是因为笔者做了很多自动化的工作。笔者认为有必要在本篇介绍这些工作。接下来的文章将不再详细介绍。
 
-####5.1  解决流水线中启动的 Docker 容器无法访问 http://artifactory
+#### 5.1  解决流水线中启动的 Docker 容器无法访问 http://artifactory
 
 流水线中，我们需要将制品上传到 artifactory（settings.xml 配置的仓库地址是 http://artifactory:8081），但是发现无法解析 host。这是因为流水线中的 Docker 容器所在网络与 Docker compose 创建的网络不同。所以，解决办法就是让流水线中的 Docker 容器加入到 Docker compose 的网络。
 
 具体解决办法就是在启动容器时，加入参数：`--network 1-cd-platform_cd-in-practice`
 
-####5.2 Jenkins 初次启动初始化
+#### 5.2 Jenkins 初次启动初始化
 
 在没有做任何设置的情况启动 Jenkins，会出现一个配置向导。这个过程必须是手工的。笔者希望这一步也是自动化的。Jenkins 启动时会执行 `init.groovy.d/`目录下的 Groovy 脚本。
 
-####5.3 虚拟机中如何能访问到 http://artifactory ？
+#### 5.3 虚拟机中如何能访问到 http://artifactory ？
 
 http://artifactory 部署在 Docker 容器中。Springboot 应用的制品要部署到虚拟机中，需要从 http://artifactory 中拉取制品，也就是要在虚拟机里访问容器里提供的服务。虚拟机与容器之间的网络是不通的。那怎么办呢？笔者的解决方案是使用宿主机的 IP 做中转。具体做法就是在虚拟机中加一条 host 记录：
 ```ruby
