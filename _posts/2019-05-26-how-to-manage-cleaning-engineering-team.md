@@ -1,3 +1,4 @@
+---
 layout: post
 title: "如果给你一支外墙清洗工程队，你会如何管？"
 description: "我"
