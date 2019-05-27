@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "如果给你一支外墙清洗工程队，你会如何管？"
-description: "我"
+description: ""
 date: 2019-05-26
 tags: [管理]
 comments: true
