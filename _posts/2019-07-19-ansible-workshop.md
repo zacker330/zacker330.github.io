@@ -3,7 +3,7 @@ layout: post
 title: "如何设计一次 Ansible 的入门工作坊"
 description: ""
 date: 2019-07-19
-tags: [ansible]ß
+tags: [ansible]
 comments: true
 share: true
 ---
