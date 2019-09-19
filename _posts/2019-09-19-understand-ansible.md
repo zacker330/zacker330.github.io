@@ -442,6 +442,7 @@ server {
 我们支持多种方式：
 1. playbook.yml 文件中
     playbook.yml 文件中，又分为两种情况：1. 在 roles 级别；2. 在 playbook 级别的。代码样例如下：
+
     ```yaml
     ---
     - hosts: "nginx"
@@ -456,6 +457,7 @@ server {
       
 2. inventory 文件中
 针对每台机器，同一变量可能需要设置成不同的值。
+
     ```
     [springboot]
     192.168.35.20 apps_port=9091 ansible_ssh_user=vagrant ansible_ssh_pass=vagrant
@@ -466,6 +468,7 @@ server {
 
 3. 命令行转入
     在命令行中加入参数：`--extra-vars` 即可。
+
     ```
     ansible-playbook release.yml --extra-vars "version=1.23.45  other_variable=foo"
 
@@ -487,6 +490,7 @@ server {
 上例中，只是单条件。如果多条件呢？如何实现“与”和“或”呢？
 
 “与”的示例如下：
+
 ```yaml
 - name: "shut down CentOS 6 and Debian 7 systems"
   command: /sbin/shutdown -t now
