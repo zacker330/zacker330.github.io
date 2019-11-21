@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "谈 DevOps 平台落地：前端项目构建又失败了"
+title: "谈 DevOps 平台落地：你们流水线从编译到部署需要多少分钟啊？"
 description: ""
-date: 2019-11-20
+date: 2019-11-21
 comments: true
 share: true
 ---
