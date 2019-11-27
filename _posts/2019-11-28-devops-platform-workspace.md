@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "谈 DevOps 平台设计：为什么部署后的包还是旧的包？"
+title: "谈 DevOps 平台设计：为什么用户喜欢在构建后加一句 ls -al ."
 description: ""
 date: 2019-11-28
 comments: true
