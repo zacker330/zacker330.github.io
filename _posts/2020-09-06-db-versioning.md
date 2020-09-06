@@ -40,7 +40,21 @@ Schema "PUBLIC" is up to date. No migration necessary.
 ```
 
 ### 与CI/CD集成
+使用1个Git仓库对数据库工程进行版化。目录结构如下：
+
+```shell
+├── config
+│   ├── flyway.conf
+│   └── flyway.template.conf
+├── Jenkinsfile.groovy
+├── README.md
+└── sql
+    └── V1__Create_person_table.sql
+
+```
+
 当Git仓库准备好后，我们就需要和类似Jenkins这样的CI/CD集成了。集成的思路很简单，就是把本地执行的命令照搬到CI/CD平台上就行。思路：
+
 1. 准备Flyway的执行环境。推荐在Docker容器中运行。
 2. 执行flyway命令。
 
