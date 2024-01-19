@@ -262,7 +262,7 @@ bazel run //server/src/main/java:springboot
 1. 未集成ORM的能力；
 2. 未集成前端JS/CSS相关的能力。
 
-以上能力接下来的教程中实现。
+以上能力会在接下来的教程中实现。
 
 完整的工程地址：https://github.com/zacker330/bazel-springboot-project-template
 
