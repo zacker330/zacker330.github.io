@@ -2,7 +2,7 @@
 layout: post
 title: "活多人少，每个需求都紧急，多数项目延期，怎么破？"
 Description: ""
-date: 2019-03-1
+date: 2019-03-01
 tags: [管理]
 comments: true
 share: true

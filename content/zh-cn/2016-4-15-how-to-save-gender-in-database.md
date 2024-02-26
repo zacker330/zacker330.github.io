@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "性别字段存储时应该使用的字符串，还是数字？"
-Description: ""
-date: 2016-4-15
+Description: "软件设计过程需要考虑的问题"
+date: 2016-04-15
 tags: [软件设计, 面向对象分析与设计]
 comments: true
 share: true

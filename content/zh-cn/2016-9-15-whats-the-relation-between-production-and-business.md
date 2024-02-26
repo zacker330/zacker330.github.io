@@ -2,7 +2,7 @@
 layout: post
 title: "商业模式与产品设计有什么关系？以媒体公司为例"
 Description: "都是钱的问题。"
-date: 2016-9-15
+date: 2016-09-15
 tags: [产品设计, 商业模式, 媒体公司]
 comments: true
 share: true

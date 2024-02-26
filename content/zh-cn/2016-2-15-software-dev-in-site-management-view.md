@@ -2,7 +2,7 @@
 layout: post
 title: "老翟书摘：从《大野耐一的现场管理》看软件工程管理"
 Description: "听过丰田生产方式，没听过大野耐一？"
-date: 2016-2-15
+date: 2016-02-15
 tags: [丰田生产方式, 大野耐一, 项目管理]
 comments: true
 share: true

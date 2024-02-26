@@ -2,7 +2,7 @@
 layout: post
 title: "Spark本地开发环境搭建"
 Description: ""
-date: 2016-1-1
+date: 2016-01-01
 tags: [Spark, 大数据]
 comments: true
 share: true

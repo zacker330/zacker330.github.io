@@ -2,7 +2,7 @@
 layout: post
 title: "Puppet，Chef，Ansible的共性"
 Description: "曾经有人评我这篇博客：如果能说说它们的不同就好。我现在回答你：只有知道共性才能看到不同，否则它们所有的地方都是不同的。 同时，很多人只看到这篇博客的表象：技术方面的文章。鲜少人知道这篇博客的价值：教你一种发现事物共性的方式。"
-date: 2016-1-2
+date: 2016-01-02
 tags: [Puppet, Chef, Ansible]
 comments: true
 share: true

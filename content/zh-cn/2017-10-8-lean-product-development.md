@@ -2,7 +2,7 @@
 layout: post
 title: "《精益产品开发》老翟读后感"
 Description: "这是一本好书"
-date: 2017-10-8
+date: 2017-10-08
 tags: [Lean]
 comments: true
 share: true

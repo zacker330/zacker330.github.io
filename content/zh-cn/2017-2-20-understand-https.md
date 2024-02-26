@@ -2,7 +2,7 @@
 layout: post
 title: "也许，这样理解HTTPS更容易"
 Description: "本文尝试一步步**还原**HTTPS的设计过程，以理解为什么HTTPS最终会是这副模样。但是这并不代表HTTPS的真实设计过程。在阅读本文时，你可以尝试放下已有的对HTTPS的理解，这样更利于“还原”过程。"
-date: 2017-2-20
+date: 2017-02-20
 tags: [HTTPS]
 comments: true
 share: true

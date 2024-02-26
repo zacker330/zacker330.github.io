@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "一些小团队的自动化运维实践经验"
-Description: ""
-date: 2018-06-7
+Description: "带团队的日志"
+date: 2018-06-07
 tags: [运维]
 comments: true
 share: true

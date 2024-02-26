@@ -1,14 +1,10 @@
 ---
 layout: post
-title: "Jenkins kubernates原理"
+title: "Jenkins kubernetes插件的原理"
 Description: ""
-date: 2020-05-04
-comments: true
-share: true
+date: 2024-02-26
+tags: [Jenkins,Kubernetes]
 ---
-
-![image.png](/assets/images/292372-8163b7fa93e5d1fb.jpg)
-
 
 ## 如何使用
 使用Kubernetes插件时，我们需要做三件事情：

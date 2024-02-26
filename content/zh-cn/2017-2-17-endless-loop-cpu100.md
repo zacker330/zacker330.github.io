@@ -2,7 +2,7 @@
 layout: post
 title: "我故意写了个死循环"
 Description: "没有踩过死循环的坑的程序员不是好程序员"
-date: 2017-2-17
+date: 2017-02-17
 tags: [Java]
 comments: true
 share: true 

@@ -12,9 +12,9 @@ tags: [云原生,Cloud Native]
 
 定义此云原生应用规范，我们有以下几个目的：
 
-1.  节约人员沟通成本：你不需要像以前那样需要反复的问对方的服务的端口；
-2.  节约运维成本：因为应用是标准的，所以，对于所有的应用，只需要使用统一的部署方式、统一的监控方式；
-3.  节约开发新应用的成本：根据规范，我们可以搭建各种语言或者框架的工程的脚手架；
+1. 节约人员沟通成本：你不需要像以前那样需要反复的问对方的服务的端口；
+2. 节约运维成本：因为应用是标准的，所以，对于所有的应用，只需要使用统一的部署方式、统一的监控方式；
+3. 节约开发新应用的成本：根据规范，我们可以搭建各种语言或者框架的工程的脚手架；
 
 以下是规范正文：
 
@@ -42,7 +42,7 @@ tags: [云原生,Cloud Native]
 *   提供应用ready接口(可以与健康检查接口相同)`/private/ready`：http code返回200代表ready；
 *   提供实时修改日志级别的接口：/private/loggers 。这个接口，我们可以参考Java的Logback框架的实现。
 
-![Screen Shot 2021-07-16 at 6.23.34 AM.png](https://upload-images.jianshu.io/upload_images/292372-fd67f78d16ec250b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![cloud native specification](/assets/images/cloud-native-specification.png)
 
 ### **Docker镜像规范**
 

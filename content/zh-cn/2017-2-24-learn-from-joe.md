@@ -2,7 +2,7 @@
 layout: post
 title: "我从Airbnb联合创始人的Talk里学到的"
 Description: "学习别人如何思考比接受别人的知识更重要"
-date: 2017-2-24
+date: 2017-02-24
 tags: [产品,Airbnb]
 comments: true
 share: true

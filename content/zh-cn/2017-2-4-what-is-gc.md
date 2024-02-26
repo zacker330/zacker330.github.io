@@ -2,7 +2,7 @@
 layout: post
 title: "垃圾回收原来是这么回事"
 Description: "ohn McCarthy身为Lisp之父和人工智能之父，同时，他也是GC之父。1960年，他在其论文中首次发布了GC算法（其实是委婉的提出😂）。而Java的前身Oak是在1990发布的，利用JVM实现了跨平台。GC因此一举成名。"
-date: 2017-2-4
+date: 2017-02-04
 tags: [GC]
 comments: true
 share: true

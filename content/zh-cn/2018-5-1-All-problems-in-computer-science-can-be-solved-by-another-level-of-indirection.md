@@ -2,7 +2,7 @@
 layout: post
 title: "为什么“分层”给我们带来好处——论软件工程的分层概念"
 Description: "计算机科学中的任何问题，都可以通过加上一层逻辑层来解决。-- David Wheeler"
-date: 2018-5-1
+date: 2018-05-01
 tags: [架构]
 comments: true
 share: true

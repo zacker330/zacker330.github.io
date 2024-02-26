@@ -2,7 +2,7 @@
 layout: post
 title: "如何进行有效的指导，如何成功的分配任务"
 Description: "卓越管理的秘密"
-date: 2018-2-19
+date: 2018-02-19
 tags: [管理]
 comments: true
 share: true

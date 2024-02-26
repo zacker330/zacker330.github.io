@@ -2,7 +2,7 @@
 layout: post
 title: "如何防止程序员上班迟到？"
 Description: "你今天打卡了没？"
-date: 2017-3-3
+date: 2017-03-03
 tags: [企业管理,站会]
 comments: true
 share: true

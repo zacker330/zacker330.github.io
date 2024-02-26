@@ -2,8 +2,8 @@
 layout: post
 title: "出现运维事故后，你会怎么办？"
 Description: ""
-date: 2018-3-30
-tags: [运维]
+date: 2018-03-30
+tags: [运维,SRE]
 comments: true
 share: true
 ---

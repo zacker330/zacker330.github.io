@@ -2,7 +2,7 @@
 layout: post
 title: "如何在半小时搭建一个简单的日志分析平台？"
 Description: "最好了解下Ansible和Vagrant"
-date: 2016-9-10
+date: 2016-09-10
 tags: [Elasticsearch, Logstash, Kibana, Ansible, Vagrant]
 comments: true
 share: true

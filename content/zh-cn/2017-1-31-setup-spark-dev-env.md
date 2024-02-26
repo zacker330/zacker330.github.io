@@ -2,7 +2,7 @@
 layout: post
 title: "这样搭建Spark学习环境效率似乎更高"
 Description: "让搭建学习环境不再成为门槛"
-date: 2017-1-31
+date: 2017-01-31
 tags: [Spark,Hadoop,Hbase]
 comments: true
 share: true

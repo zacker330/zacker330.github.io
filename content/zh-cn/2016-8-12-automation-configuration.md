@@ -2,7 +2,7 @@
 layout: post
 title: "关于自动化配置还有什么好说的呢？"
 Description: "不想说重复的话"
-date: 2016-8-12
+date: 2016-08-12
 tags: [自动化, 配置管理]
 comments: true
 share: true

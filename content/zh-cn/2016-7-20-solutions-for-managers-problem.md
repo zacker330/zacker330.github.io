@@ -2,7 +2,7 @@
 layout: post
 title: "老翟书摘：《50大管理难题解决方案》"
 Description: "初做管理，想快速成长，而不想只依赖磨时间来带动“管理”的能力成长。所以，找到此书。"
-date: 2016-7-20
+date: 2016-07-20
 tags: [管理, 老翟书摘]
 comments: true
 share: true

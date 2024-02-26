@@ -2,7 +2,7 @@
 layout: post
 title: "什么？项目延期有解药？"
 Description: "当我们要考虑如何让项目不延期时，我们是否做到让每个员工都满负荷了？我们追求的是不延期，还是追求更卓越的产品？"
-date: 2017-4-14
+date: 2017-04-14
 tags: [项目管理,看板,站会]
 comments: true
 share: true
