@@ -2,7 +2,7 @@
 layout: post
 title: "谈DevOps平台实施：实现从内网拉取外网依赖的一种方案"
 Description: ""
-date: 2019-11-4
+date: 2019-11-04
 comments: true
 share: true
 ---

@@ -2,7 +2,7 @@
 layout: post
 title: "谈 DevOps 平台设计：版本号相关功能的设计"
 Description: ""
-date: 2019-11-6
+date: 2019-11-06
 comments: true
 share: true
 ---

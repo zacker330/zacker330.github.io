@@ -2,7 +2,7 @@
 layout: post
 title: "ChatOps实战"
 Description: "ChatOps没有那么神秘，也就是正则+脚本"
-date: 2017-10-8
+date: 2017-10-08
 tags: [Ansible,ChatOps,DevOps]
 comments: true
 share: true

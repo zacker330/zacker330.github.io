@@ -2,7 +2,7 @@
 layout: post
 title: "微服务架构下的配置治理模式"
 Description: ""
-date: 2023-4.-20
+date: 2023-06-12
 tags: [MicroServices,Configuration]
 ---
 微服务被滥用是不争的事实。被滥用的同时，很少人留意到它所带来的配置治理的问题。本文我们介绍两种常见的治理模式。
