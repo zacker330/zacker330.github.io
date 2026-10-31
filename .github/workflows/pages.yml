@@ -63,10 +63,10 @@ jobs:
 
       - name: Build and validate
         env:
-          PAGES_BASE_URL: ${{ steps.pages.outputs.base_url || 'https://showme.codes' }}
+          PAGES_HOST: ${{ steps.pages.outputs.host || 'showme.codes' }}
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo-cache
           HUGO_RESOURCEDIR: ${{ runner.temp }}/hugo-resources
-        run: bash scripts/build-pages.sh "$PAGES_BASE_URL" public
+        run: bash scripts/build-pages.sh "https://$PAGES_HOST/" public
 
       - name: Upload Pages artifact
         if: github.event_name != 'pull_request'
