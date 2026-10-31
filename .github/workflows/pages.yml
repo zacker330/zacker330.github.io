@@ -1,0 +1,91 @@
+name: Build and deploy GitHub Pages
+
+on:
+  pull_request:
+    branches: [master]
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages-${{ github.event_name == 'pull_request' && github.event.pull_request.number || 'deployment' }}
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  HUGO_VERSION: 0.162.1
+  TZ: Asia/Shanghai
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Install Hugo extended
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          install_dir="$RUNNER_TEMP/hugo"
+          archive="hugo_extended_${HUGO_VERSION}_linux-amd64.tar.gz"
+          checksums="hugo_${HUGO_VERSION}_checksums.txt"
+          mkdir -p "$install_dir"
+          gh api "repos/gohugoio/hugo/releases/tags/v${HUGO_VERSION}" > "$install_dir/release.json"
+          for asset in "$archive" "$checksums"; do
+            asset_id=$(jq -er --arg name "$asset" '.assets[] | select(.name == $name) | .id' "$install_dir/release.json")
+            gh api -H 'Accept: application/octet-stream' "repos/gohugoio/hugo/releases/assets/$asset_id" > "$install_dir/$asset"
+          done
+          cd "$install_dir"
+          awk -v archive="$archive" '$2 == archive' "$checksums" > selected-checksum.txt
+          test -s selected-checksum.txt
+          sha256sum --check selected-checksum.txt
+          tar -xzf "$archive" hugo
+          ./hugo version
+          echo "$install_dir" >> "$GITHUB_PATH"
+
+      - name: Test URL validation
+        run: node --test scripts/verify-site.test.mjs
+
+      - name: Read Pages configuration
+        id: pages
+        if: github.event_name != 'pull_request'
+        uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
+
+      - name: Build and validate
+        env:
+          PAGES_BASE_URL: ${{ steps.pages.outputs.base_url || 'https://showme.codes' }}
+          HUGO_CACHEDIR: ${{ runner.temp }}/hugo-cache
+          HUGO_RESOURCEDIR: ${{ runner.temp }}/hugo-resources
+        run: bash scripts/build-pages.sh "$PAGES_BASE_URL" public
+
+      - name: Upload Pages artifact
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: public
+
+  deploy:
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/master'
+    needs: build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
