@@ -70,7 +70,6 @@ Here are some of the practices I have observed:
 - Having eight different deployment and configuration approaches in a company with fewer than fifty people. Sometimes, even one person uses more than two approaches.
 - Putting plaintext secrets in source code.
 - Writing all webhook data into a database without considering capacity. With AI available, I find myself wondering why capacity was never considered.
-- Using logs to monitor performance problems.
 - Deploying applications to machines through Bash and SSH.
 - And so on.
 
