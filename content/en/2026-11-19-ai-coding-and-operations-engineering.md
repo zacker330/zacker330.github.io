@@ -73,6 +73,8 @@ Here are some of the practices I have observed:
 - Deploying applications to machines through Bash and SSH.
 - And so on.
 
+Come on, these are mistakes only junior operations engineers would make. Companies are paying for developers to relearn operations with AI's help.
+
 These observations remind me that generating runnable code completes only part of the software engineering work. Security, reliability, operating costs, and maintainability still require engineering design and verification.
 
 People often say that "taste" matters most. To me, we have not even reached the point where that is the most useful discussion. I am not even sure I accept the idea of a general theory of taste in software engineering. What I see are trade-offs under different circumstances.
