@@ -9,6 +9,13 @@ enableRobotsTXT = true
 buildDrafts = false
 buildFuture = false
 buildExpired = false
+hasCJKLanguage = true
+
+# Keep English reading-time rules when an article includes a Chinese translation link.
+[[cascade]]
+  isCJKLanguage = false
+  [cascade.target]
+    path = "{/en,/en/**}"
 
 [pagination]
   pagerSize = 10

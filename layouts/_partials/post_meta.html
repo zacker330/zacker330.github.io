@@ -1,0 +1,32 @@
+{{- $scratch := newScratch }}
+{{- $isChinese := eq .Section "zh-cn" }}
+
+{{- if not .Date.IsZero -}}
+    {{- $scratch.Add "meta" (slice (printf "<span title='%s'>%s</span>" (.Date) (.Date | time.Format (default ":date_long" site.Params.DateFormat)))) }}
+{{- end }}
+
+{{- if (.Param "ShowReadingTime") -}}
+    {{- $readingTime := i18n "read_time" .ReadingTime | default (printf "%d min" .ReadingTime) }}
+    {{- if $isChinese }}
+        {{- $readingTime = printf "%d 分钟" .ReadingTime }}
+    {{- end }}
+    {{- $scratch.Add "meta" (slice (printf "<span>%s</span>" $readingTime)) }}
+{{- end }}
+
+{{- if (.Param "ShowWordCount") -}}
+    {{- $wordCount := i18n "words" .WordCount | default (printf "%d words" .WordCount) }}
+    {{- if $isChinese }}
+        {{- $wordCount = printf "%d 字" .WordCount }}
+    {{- end }}
+    {{- $scratch.Add "meta" (slice (printf "<span>%s</span>" $wordCount)) }}
+{{- end }}
+
+{{- if not (.Param "hideAuthor") -}}
+    {{- with (partial "author.html" .) }}
+        {{- $scratch.Add "meta" (slice (printf "<span>%s</span>" .)) }}
+    {{- end }}
+{{- end }}
+
+{{- with ($scratch.Get "meta") }}
+    {{- delimit . "&nbsp;·&nbsp;" | safeHTML -}}
+{{- end -}}
