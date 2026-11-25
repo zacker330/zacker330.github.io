@@ -1,0 +1,52 @@
+{{- define "main" }}
+{{- $titles := dict "zh-cn" "中文文章" "en" "English posts" }}
+{{- $sections := slice }}
+{{- range site.Params.mainSections }}
+  {{- with site.GetPage . }}
+    {{- $posts := where .RegularPagesRecursive "Draft" false }}
+    {{- $posts = where $posts "LinkTitle" "ne" "" }}
+    {{- if $posts }}
+      {{- $title := index $titles .Section | default .LinkTitle }}
+      {{- $sections = $sections | append (dict "language" .Section "title" $title "posts" $posts.ByDate.Reverse) }}
+    {{- end }}
+  {{- end }}
+{{- end }}
+
+<header class="page-header" lang="zh-CN">
+  <h1>{{ .Title }}</h1>
+</header>
+
+<div class="post-content md-content">
+  <nav aria-labelledby="sitemap-pages">
+    <h2 id="sitemap-pages" lang="zh-CN">主要页面</h2>
+    <ul>
+      <li><a href="{{ site.Home.RelPermalink }}" lang="zh-CN">首页</a></li>
+      {{- range where site.Menus.main "Identifier" "ne" "sitemap" }}
+      <li><a href="{{ .URL | absLangURL }}">{{ .Name }}</a></li>
+      {{- end }}
+    </ul>
+  </nav>
+
+  {{- with $sections }}
+  <nav aria-labelledby="sitemap-posts">
+    <h2 id="sitemap-posts" lang="zh-CN">文章索引</h2>
+    <ul>
+      {{- range . }}
+      <li><a href="#posts-{{ .language }}" lang="{{ .language }}">{{ .title }}</a></li>
+      {{- end }}
+    </ul>
+  </nav>
+
+  {{- range . }}
+  <section lang="{{ .language }}" aria-labelledby="posts-{{ .language }}">
+    <h2 id="posts-{{ .language }}">{{ .title }}</h2>
+    <ul>
+      {{- range .posts }}
+      <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+      {{- end }}
+    </ul>
+  </section>
+  {{- end }}
+  {{- end }}
+</div>
+{{- end }}

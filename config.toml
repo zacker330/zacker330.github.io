@@ -109,3 +109,8 @@ hasCJKLanguage = true
   name = "Search"
   url = "/search/"
   weight = 5
+[[menu.main]]
+  identifier = "sitemap"
+  name = "站点地图"
+  pageRef = "/sitemap"
+  weight = 6
