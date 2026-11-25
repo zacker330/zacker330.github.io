@@ -3,6 +3,8 @@ layout: post
 title: "使用 Jenkins + Ansible 实现跨应用配置管理"
 Description: ""
 date: 2020-03-12
+aliases:
+  - /2020-03-12/jenkins-ansible-cross-conf/
 comments: true
 share: true
 ---

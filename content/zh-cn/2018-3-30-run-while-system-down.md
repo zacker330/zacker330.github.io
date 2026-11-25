@@ -3,6 +3,8 @@ layout: post
 title: "出现运维事故后，你会怎么办？"
 Description: ""
 date: 2018-03-30
+aliases:
+  - /2018-03-30/run-while-system-down/
 tags: [运维,SRE]
 comments: true
 share: true

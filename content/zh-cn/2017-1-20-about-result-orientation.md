@@ -3,6 +3,8 @@ layout: post
 title: "关于“以结果为导向”的管理方式的碎碎语"
 Description: "为什么要以结果为导向？"
 date: 2017-01-20
+aliases:
+  - /2017-01-20/about-result-orientation/
 tags: [管理]
 comments: true
 share: true

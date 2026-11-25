@@ -3,6 +3,8 @@ layout: post
 title: "最好的礼物是一个真诚的建议"
 Description: ""
 date: 2018-12-11
+aliases:
+  - /2018-12-11/to-be-broad-minded-toward-others/
 tags: [职场]
 comments: true
 share: true
