@@ -29,6 +29,7 @@ function tags(html, name) {
 }
 
 function sitemapURLs(xml) {
+  requireCondition(!/^\uFEFF?[ \t\r\n]+<\?xml[ \t\r\n]/.test(xml), 'Sitemap XML declaration must be at the start of the file');
   requireCondition(/<urlset\b/.test(xml), 'Expected a sitemap urlset');
   const urls = [...xml.matchAll(/<loc>\s*([^<]+?)\s*<\/loc>/g)].map((match) => decodeEntities(match[1]));
   requireCondition(urls.length > 0, 'Sitemap is empty');

@@ -43,6 +43,13 @@ test('rejects a removed published URL', () => {
   assert.throws(() => verifySite(site.options), /Published URL disappeared/);
 });
 
+test('rejects whitespace before the sitemap XML declaration', () => {
+  const site = fixture();
+  const sitemap = readFileSync(join(site.directory, 'sitemap.xml'), 'utf8');
+  site.write('sitemap.xml', `\n<?xml version="1.0"?>\n${sitemap}`);
+  assert.throws(() => verifySite(site.options), /Sitemap XML declaration must be at the start/);
+});
+
 test('rejects a changed canonical path even on the same domain', () => {
   const site = fixture();
   site.write('index.html', site.html.replace('href=https://showme.codes/', 'href=https://showme.codes/renamed/'));
